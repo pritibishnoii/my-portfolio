@@ -12,7 +12,7 @@
 		"imageSrc": "projects/story.png",
 		"description": "StoryApp is a creative storytelling platform built with the MERN stack, enabling users to write, share, and explore stories in a beautifully organized interface. With features like rich text editing, category-based browsing, StoryApp makes storytelling engaging and accessible for everyone.",
 		"skills": ["React", "Node.js", "MongoDB", "Express"],
-		"demo": "storyapp-nine.vercel.app/",
+		"demo": "https://storyapp-nine.vercel.app/",
 		"source": "https://github.com/pritibishnoii/storyapp"
 	},
 	{
@@ -29,7 +29,7 @@
 		"imageSrc": "projects/note.png",
 		"description": "Pocket Notes is a lightweight and intuitive note-taking app built with React and styled using modular CSS for scoped and maintainable styling. It allows users to quickly create, edit, and organize notes into color-coded categories, offering a clean UI and smooth user experience for everyday productivity. and mobile responsive design ",
 		"skills": ["React", "CSS", "React-icons", "Redux"],
-		"demo": "https://664015ad82f5fe5ebf049e59--pokect-notes-app.netlify.app/",
+		"demo": "https://notes-pocket-app.vercel.app/",
 		"source": "https://www.github.com/pritibishnoii/notes-pocket-app"
 	},
 	{
@@ -37,7 +37,7 @@
 		"imageSrc": "projects/movie.png",
 		"description": "Built using MERN technologies (MongoDB, Express, React, Node.js), Quizee Builder is a cutting-edge form creation platform that makes learning fun and engaging. Watch a quick demo to see it in action: its features: - User-friendly form builder - Variety of question types - Real-time scoring and feedback - Sharing options for easy collaboration",
 		"skills": ["React", "Node.js", "MongoDB", "Express"],
-		"demo": "movie-app-alpha-cyan.vercel.app",
+		"demo": "https://movie-app-alpha-cyan.vercel.app/",
 		"source": "https://www.github.com/pritibishnoii/movie-app"
 	},
 	{

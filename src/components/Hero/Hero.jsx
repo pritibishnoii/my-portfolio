@@ -16,11 +16,11 @@ export const Hero = () => {
           <a href="mailto:priti12bishnoi@gmail.com" className={ styles.contactBtn }>
             Contact Me
           </a>
-          <a href="assets/pb-cv.pdf" download class={ styles.contactBtn }>Download CV</a>
+          <a href="assets/Resume_Pritiii.pdf" download class={ styles.contactBtn }>Download CV</a>
         </div>
       </div>
       <img
-        src={ getImageUrl("hero/heroImage.png") }
+        src={ getImageUrl( "hero/heroImage.png" ) }
         alt="Hero image of me"
         className={ styles.heroImg }
       />
