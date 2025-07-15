@@ -47,5 +47,13 @@
 		"description": "Razorpay Clone is a front-end replica of the popular payment gateway platform, built using HTML, CSS, and JavaScript. This project replicates the sleek UI and responsive design of Razorpay’s homepage, showcasing modern layouts, interactive elements, and smooth animations — all without any external frameworks.",
 		"demo": "https://razorypay.netlify.app/",
 		"source": "https://www.github.com/pritibishnoii/Razorypay-clone"
+	},
+	{
+		"title": "QuickKart",
+		"imageSrc": "projects/storeui.png",
+		"skills": ["React.js", "Tailwindcss", "Redux toolkit", "RTK Query","Node.js","Express.js","MongoDB"],
+		"description": "QuickKart is a modern, full-stack e-commerce web application that allows users to browse products, manage a shopping cart, and perform secure user authentication. Built with a high-performance frontend using React + Vite and a robust backend powered by Node.js, Express.js, and MongoDB, the app ensures both speed and scalability.The frontend leverages Redux Toolkit (RTK) for efficient global state management and implements responsive design for seamless use across devices. Authentication is handled securely using JWT, with passwords encrypted using bcrypt. The UI is enhanced with toast notifications, smooth routing, and reusable components.StoreUI is structured with best practices in mind, featuring clean architecture, modular code, and environment-based configuration. It’s designed to be easily scalable and ready for future enhancements like admin dashboards, payment integration, and order tracking..",
+		"demo": "https://storeuiii.vercel.app/",
+		"source": "https://github.com/pritibishnoii/storeuiii"
 	}
 ]
