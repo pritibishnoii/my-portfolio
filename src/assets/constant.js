@@ -7,6 +7,7 @@ import razorpay from "./projects/razorpay.png";
 import storeui from "./projects/storeui.png";
 import qyuiz from "./projects/qyuizee.png";
 import story from "./projects/story.png"
+import cacktail from "./projects/cacktail.png"
 
 
 export  {
@@ -18,6 +19,7 @@ export  {
     razorpay,
     storeui,
     qyuiz,
-    story
+    story,
+    cacktail
 
 }

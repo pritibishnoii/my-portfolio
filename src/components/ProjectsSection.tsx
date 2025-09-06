@@ -3,16 +3,26 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Button } from './ui/button';
 import {ExternalLink, Github, ChevronLeft, ChevronRight} from 'lucide-react';
-import {code,movie,quiz,storeui,story,note,    razorpay} from "../assets/constant"
+import {code,movie,quiz,storeui,story,note,    razorpay,cacktail} from "../assets/constant"
 
 gsap.registerPlugin(ScrollTrigger);
+/** Project data type */
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  tags: string[];
+  image: string;
+  github: string;
+  live: string;
+  featured: boolean;
+}
 
 const ProjectsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [itemsPerView, setItemsPerView] = useState(1);
 
   const projects = [
     {
@@ -90,7 +100,7 @@ const ProjectsSection = () => {
       title: 'Cacktail',
       description: 'The Cacktail Landing Page is a modern and visually appealing landing page designed to showcase a cocktail brand in a creative way.I built this project using React.js for component-based structure, Tailwind CSS for responsive and clean styling, and GSAP to add smooth animations and engaging transitions.The page highlights interactive elements, smooth scrolling effects, and an overall premium feel for better user experience.It is fully responsive across all devices, ensuring seamless accessibility for both desktop and mobile users.This project demonstrates my ability to combine design, animations, and functionality to deliver a polished front-end experience.',
       tags: [ 'React JS', 'TailwindCSS',"GSAP"],
-      image:razorpay,
+      image:cacktail,
       github: 'https://github.com/pritibishnoii/cacktail',
       live: 'https://cacktail-landing-page.vercel.app/',
       featured: false
@@ -99,20 +109,6 @@ const ProjectsSection = () => {
   ];
 
   useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width >= 1024) {
-        setItemsPerView(3);
-      } else if (width >= 768) {
-        setItemsPerView(2);
-      } else {
-        setItemsPerView(1);
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
     const ctx = gsap.context(() => {
       // Initial slider animation
       gsap.fromTo(
@@ -131,20 +127,17 @@ const ProjectsSection = () => {
       );
     }, sectionRef);
 
-    return () => {
-      ctx.revert();
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => ctx.revert();
   }, []);
 
-  const totalSlides = Math.ceil(projects.length / itemsPerView);
 
+  const totalSlides = projects.length;
+  
   const goToSlide = (index: number) => {
     if (index < 0 || index >= totalSlides) return;
     
-    const translateX = -(index * (100 / itemsPerView));
     gsap.to(projectsRef.current, {
-      x: `${translateX}%`,
+      xPercent: -100 * index,
       duration: 0.6,
       ease: 'power2.out',
     });
@@ -170,7 +163,7 @@ const ProjectsSection = () => {
     return () => clearInterval(interval);
   }, [currentIndex, totalSlides]);
 
-  const ProjectCard = ({ project, featured = false }: any) => (
+  const ProjectCard = ({ project, featured = false }: { project: Project; featured?: boolean }) => (
     <div className="group relative bg-surface rounded-xl overflow-hidden border border-surface-accent hover:shadow-custom-lg transition-all duration-500 h-full">
       {featured && (
         <div className="absolute top-4 left-4 z-10 bg-gradient-accent text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -278,21 +271,13 @@ const ProjectsSection = () => {
 
           {/* Slider */}
           <div className="overflow-hidden rounded-xl">
-            <div 
+            <div
               ref={projectsRef}
               className="flex transition-transform duration-600 ease-out"
-              style={{ width: `${(projects.length * 100) / itemsPerView}%` }}
             >
               {projects.map((project) => (
-                <div 
-                  key={project.id}
-                  className="flex-shrink-0 px-4"
-                  style={{ width: `${100 / projects.length}%` }}
-                >
-                  <ProjectCard
-                    project={project}
-                    featured={project.featured}
-                  />
+                <div key={project.id} className="flex-shrink-0 w-full px-4">
+                  <ProjectCard project={project} featured={project.featured} />
                 </div>
               ))}
             </div>
