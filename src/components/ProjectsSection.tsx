@@ -84,7 +84,18 @@ const ProjectsSection = () => {
       github: 'https://www.github.com/pritibishnoii/Razorypay-clone',
       live: 'https://razorypay.netlify.app/',
       featured: false
+    },
+    {
+          id: 8,
+      title: 'Cacktail',
+      description: 'The Cacktail Landing Page is a modern and visually appealing landing page designed to showcase a cocktail brand in a creative way.I built this project using React.js for component-based structure, Tailwind CSS for responsive and clean styling, and GSAP to add smooth animations and engaging transitions.The page highlights interactive elements, smooth scrolling effects, and an overall premium feel for better user experience.It is fully responsive across all devices, ensuring seamless accessibility for both desktop and mobile users.This project demonstrates my ability to combine design, animations, and functionality to deliver a polished front-end experience.',
+      tags: [ 'React JS', 'TailwindCSS',"GSAP"],
+      image:razorpay,
+      github: 'https://github.com/pritibishnoii/cacktail',
+      live: 'https://cacktail-landing-page.vercel.app/',
+      featured: false
     }
+
   ];
 
   useEffect(() => {
