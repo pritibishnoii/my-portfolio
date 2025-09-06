@@ -25,24 +25,25 @@ const ProjectsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const projects = [
+  
     {
       id: 1,
-      title: 'Quizee Builder',
-      description: 'Quizee Builder is a modern, MERN stack-based form and quiz creation platform designed to make learning interactive and fun. With its intuitive interface, users can build quizzes with various question types, get real-time scoring and feedback, and easily share quizzes for collaboration.',
-      tags: ['React', 'Node.js', 'MongoDB', 'Express'],
-      image: quiz,
-      github: 'https://www.github.com/pritibishnoii/quizee_builder',
-      live: 'https://quizee-builder.vercel.app/',
-      featured: true
-    },
-    {
-      id: 2,
       title: 'QuickKart',
       description: 'QuickKart is a modern, full-stack e-commerce web application that allows users to browse products, manage a shopping cart, and perform secure user authentication. Built with React + Vite frontend and Node.js backend with MongoDB, featuring Redux Toolkit for state management.',
       tags: ['React.js', 'Tailwindcss', 'Redux toolkit', 'RTK Query', 'Node.js', 'Express.js', 'MongoDB'],
       image: storeui,
       github: 'https://github.com/pritibishnoii/storeuiii',
       live: 'https://storeuiii.vercel.app/',
+      featured: true
+    },
+      {
+      id: 2,
+      title: 'Quizee Builder',
+      description: 'Quizee Builder is a modern, MERN stack-based form and quiz creation platform designed to make learning interactive and fun. With its intuitive interface, users can build quizzes with various question types, get real-time scoring and feedback, and easily share quizzes for collaboration.',
+      tags: ['React', 'Node.js', 'MongoDB', 'Express'],
+      image: quiz,
+      github: 'https://www.github.com/pritibishnoii/quizee_builder',
+      live: 'https://quizee-builder.vercel.app/',
       featured: true
     },
     {
