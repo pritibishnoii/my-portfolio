@@ -1,3 +1,5 @@
+/** @format */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,33 +12,47 @@ All colors MUST be HSL.
   :root {
     --background: 0 0% 98%;
     --foreground: 224 71% 4%;
-    
+
     /* Brand Colors */
     --brand-primary: 229 84% 5%;
     --brand-accent: 217 91% 60%;
     --brand-accent-light: 213 93% 68%;
-    
+
     /* Text Colors */
     --text-primary: 224 71% 4%;
     --text-secondary: 215 25% 27%;
     --text-muted: 215 14% 54%;
-    
+
     /* Background Variations */
     --surface: 0 0% 100%;
     --surface-secondary: 210 40% 98%;
     --surface-accent: 213 27% 84%;
-    
+
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(229 84% 5%) 0%, hsl(217 91% 60%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(213 93% 68%) 100%);
-    --gradient-surface: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
-    
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(229 84% 5%) 0%,
+      hsl(217 91% 60%) 100%
+    );
+    --gradient-accent: linear-gradient(
+      135deg,
+      hsl(217 91% 60%) 0%,
+      hsl(213 93% 68%) 100%
+    );
+    --gradient-surface: linear-gradient(
+      180deg,
+      hsl(0 0% 100%) 0%,
+      hsl(210 40% 98%) 100%
+    );
+
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
-    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1),
+      0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1),
+      0 4px 6px -2px hsl(0 0% 0% / 0.05);
     --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
-    
+
     /* Animation */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -88,23 +104,35 @@ All colors MUST be HSL.
   .dark {
     --background: 224 71% 4%;
     --foreground: 213 31% 91%;
-    
+
     --brand-primary: 213 93% 68%;
     --brand-accent: 217 91% 60%;
     --brand-accent-light: 213 93% 73%;
-    
+
     --text-primary: 213 31% 91%;
     --text-secondary: 217 33% 77%;
     --text-muted: 215 20% 65%;
-    
+
     --surface: 224 71% 4%;
     --surface-secondary: 217 32% 17%;
     --surface-accent: 215 25% 27%;
-    
-    --gradient-primary: linear-gradient(135deg, hsl(224 71% 4%) 0%, hsl(217 91% 60%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(213 93% 73%) 100%);
-    --gradient-surface: linear-gradient(180deg, hsl(224 71% 4%) 0%, hsl(217 32% 17%) 100%);
-    
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(224 71% 4%) 0%,
+      hsl(217 91% 60%) 100%
+    );
+    --gradient-accent: linear-gradient(
+      135deg,
+      hsl(217 91% 60%) 0%,
+      hsl(213 93% 73%) 100%
+    );
+    --gradient-surface: linear-gradient(
+      180deg,
+      hsl(224 71% 4%) 0%,
+      hsl(217 32% 17%) 100%
+    );
+
     --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.4);
 
     --card: 222.2 84% 4.9%;

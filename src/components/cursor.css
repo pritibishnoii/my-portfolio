@@ -1,0 +1,30 @@
+/** @format */
+
+body {
+  cursor: none;
+  background-color: black;
+  height: 100vh;
+}
+
+.cursor {
+  width: 8px;
+  height: 8px;
+  background-color: #c5d32c;
+}
+
+.cursor-outline {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c5d32c;
+}
+
+.cursor,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+}
