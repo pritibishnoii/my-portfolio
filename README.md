@@ -1,73 +1,79 @@
-# Welcome to your Lovable project
+# Priti Bishnoi — AI Portfolio Assistant
 
-## Project info
+A chat-style portfolio site. Instead of scrolling through sections, visitors talk to an
+AI (powered by Groq's Llama 3.3) that answers questions using Priti's real project,
+skills, experience, and contact info — pulled from her
+[GitHub portfolio repo](https://github.com/pritibishnoii/my-portfolio).
 
-**URL**: https://lovable.dev/projects/7a3befe0-32a7-42e7-bd27-b6280ce896df
+## Features
 
-## How can I edit this code?
+- **Chat interface** styled like an IDE — file-tab buttons (`About.tsx`, `Projects.tsx`,
+  `Skills.tsx`, `Contact.tsx`) act as quick-start prompts.
+- **Streaming AI responses** via the Groq API (OpenAI-compatible endpoint), so replies
+  type out in real time.
+- **Profile photo upload** — hover the avatar in the sidebar to swap in your own photo
+  (stored only in the browser session).
+- **CV upload** — drop in a `.txt`/`.md` resume and the AI will use it as extra context
+  (other formats are referenced by filename only, since parsing PDFs/Word docs needs a
+  server-side library not included here).
+- Built with **Next.js 14 (App Router)**, **Tailwind CSS**, **Framer Motion**, and
+  **GSAP**.
 
-There are several ways of editing your application.
+## Setup
 
-**Use Lovable**
+1. Install dependencies:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7a3befe0-32a7-42e7-bd27-b6280ce896df) and start prompting.
+   ```bash
+   npm install
+   ```
 
-Changes made via Lovable will be committed automatically to this repo.
+2. Get a free Groq API key at https://console.groq.com/keys.
 
-**Use your preferred IDE**
+3. Copy the env example and add your key:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+   ```bash
+   cp .env.example .env.local
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+   Then edit `.env.local`:
 
-Follow these steps:
+   ```
+   GROQ_API_KEY=your_key_here
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+4. Run the dev server:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+   ```bash
+   npm run dev
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+   Open http://localhost:3000.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## Updating portfolio content
+
+All of Priti's real data (bio, experience, skills, projects, contact links) lives in
+one place: **`lib/portfolioData.ts`**. Edit that file whenever a project, job, or link
+changes — the AI's answers update automatically since `lib/systemPrompt.ts` builds its
+context directly from that data. No prompt-engineering required.
+
+To swap the default CV, replace `public/cv.pdf`.
+
+## Deploying
+
+This is a standard Next.js app — deploys cleanly to Vercel:
+
+```bash
+vercel
 ```
 
-**Edit a file directly in GitHub**
+Just remember to set `GROQ_API_KEY` (and optionally `GROQ_MODEL`) in your hosting
+provider's environment variables.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Notes on the CV/image uploads
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/7a3befe0-32a7-42e7-bd27-b6280ce896df) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- The **profile photo** upload is purely visual (stored as a data URL in React state
+  for the current session) — it swaps the avatar shown in the sidebar.
+- The **CV upload** only reads plain text (`.txt`) or Markdown (`.md`) files directly
+  into the AI's system prompt. If you want PDF/DOCX resumes parsed automatically,
+  add a server-side parser (e.g. `pdf-parse` or `mammoth`) in a new API route and pass
+  the extracted text to `cvText` the same way `ChatWindow` already does.
