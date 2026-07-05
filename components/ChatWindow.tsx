@@ -9,6 +9,7 @@ import MessageBubble, { Message } from "./MessageBubble";
 import TypingIndicator from "./TypingIndicator";
 import TabBar, { SectionKey } from "./TabBar";
 import { profile, sectionPrompts } from "@/lib/portfolioData";
+import ProjectsGallery from "./ProjectGallery";
 
 const WELCOME: Message = {
   role: "assistant",
@@ -19,6 +20,7 @@ export default function ChatWindow({ cvText }: { cvText: string | null }) {
   const [messages, setMessages] = useState<Message[]>([WELCOME]);
   const [input, setInput] = useState("");
   const [activeTab, setActiveTab] = useState<SectionKey | null>(null);
+  const [showGallery, setShowGallery] = useState(false);
   const [isStreaming, setIsStreaming] = useState(false);
   const [isWaiting, setIsWaiting] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -114,8 +116,14 @@ export default function ChatWindow({ cvText }: { cvText: string | null }) {
   };
 
   const handleTabSelect = (key: SectionKey) => {
+    if (key === "projects") {
+      setShowGallery((prev) => (activeTab === "projects" ? !prev : true));
+    } else {
+      setShowGallery(false);
+    }
+    const alreadyActive = activeTab === key;
     setActiveTab(key);
-    sendMessage(sectionPrompts[key]);
+    if (!alreadyActive) sendMessage(sectionPrompts[key]);
   };
 
   return (
@@ -139,6 +147,11 @@ export default function ChatWindow({ cvText }: { cvText: string | null }) {
 
       <TabBar active={activeTab} onSelect={handleTabSelect} />
 
+      <ProjectsGallery
+        open={showGallery}
+        onClose={() => setShowGallery(false)}
+      />
+
       <div
         ref={scrollRef}
         className="flex-1 space-y-4 overflow-y-auto bg-void bg-grid px-4 py-6 sm:px-6">
@@ -160,7 +173,7 @@ export default function ChatWindow({ cvText }: { cvText: string | null }) {
           sendMessage(input);
         }}
         className="flex items-center gap-3 border-t border-border bg-surface px-4 py-4 sm:px-6">
-        <span className="font-mono text-accent-mint">›👻</span>
+        <span className="font-mono text-accent-mint">›</span>
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -170,7 +183,7 @@ export default function ChatWindow({ cvText }: { cvText: string | null }) {
         <button
           type="submit"
           disabled={isStreaming || !input.trim()}
-          className="flex items-center gap-1.5 rounded-lg bg-accent-violet px-4 py-2 text-sm font-medium text-void transition-opacity hover:opacity-90 disabled:opacity-40">
+          className="flex items-center gap-1.5 rounded-lg bg-[#469d89] px-4 py-2 text-sm font-medium text-void transition-opacity hover:opacity-90 disabled:opacity-40">
           <Send size={14} />
           Send
         </button>

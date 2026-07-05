@@ -72,6 +72,17 @@ export const skills = {
 
 export const projects = [
   {
+    title: "AI-Powered-Portfolio",
+    description:
+      "Built an AI-powered portfolio using Next.js, Tailwind CSS, and Groq API with a ChatGPT-like assistant that answers questions about my skills, projects, and experience.",
+    tags: ["Next.js", "Tailwind CSS", "Groq api"],
+    image: "/projects/protfolio.png",
+    github: "https://github.com/pritibishnoii/my-portfolio",
+    live: "https://preetiportfolio.vercel.app/",
+
+    featured: true,
+  },
+  {
     title: "QuickKart",
     description:
       "Full-stack e-commerce web app for browsing products, managing a cart, and secure auth. React + Vite frontend, Node.js/MongoDB backend, Redux Toolkit + RTK Query for state management.",
@@ -84,6 +95,7 @@ export const projects = [
       "Express.js",
       "MongoDB",
     ],
+    image: "/projects/storeui.png",
     github: "https://github.com/pritibishnoii/storeuiii",
     live: "https://storeuiii.vercel.app/",
     featured: true,
@@ -93,6 +105,7 @@ export const projects = [
     description:
       "MERN-based form and quiz creation platform. Build quizzes with multiple question types, real-time scoring/feedback, and easy sharing for collaboration.",
     tags: ["React", "Node.js", "MongoDB", "Express"],
+    image: "/projects/quiz.png",
     github: "https://github.com/pritibishnoii/quizee_builder",
     live: "https://quizee-builder.vercel.app/",
     featured: true,
@@ -102,6 +115,7 @@ export const projects = [
     description:
       "Creative storytelling platform (MERN) for writing, sharing, and exploring stories, with rich text editing and category-based browsing.",
     tags: ["React", "Node.js", "MongoDB", "Express"],
+    image: "/projects/story.png",
     github: "https://github.com/pritibishnoii/storyapp",
     live: "https://storyapp-nine.vercel.app/",
     featured: false,
@@ -111,6 +125,7 @@ export const projects = [
     description:
       "EdTech web app (MERN) with a hands-on, real-time code execution environment for students and educators to practice programming.",
     tags: ["React", "Node.js", "MongoDB", "Express"],
+    image: "/projects/code.png",
     github: "https://github.com/pritibishnoii/StudyNotion",
     live: "https://codeplay-edtech-project.vercel.app/",
     featured: false,
@@ -120,6 +135,7 @@ export const projects = [
     description:
       "Lightweight, intuitive note-taking app with color-coded categories, a clean UI, and mobile-responsive design.",
     tags: ["React", "CSS", "React Icons", "Redux"],
+    image: "/projects/note.png",
     github: "https://github.com/pritibishnoii/notes-pocket-app",
     live: "https://notes-pocket-app.vercel.app/",
     featured: false,
@@ -129,6 +145,7 @@ export const projects = [
     description:
       "Movie browsing app (MERN) with detailed information display and an interactive UI for movie enthusiasts.",
     tags: ["React", "Node.js", "MongoDB", "Express"],
+    image: "/projects/movie.png",
     github: "https://github.com/pritibishnoii/movie-app",
     live: "https://movie-app-alpha-cyan.vercel.app/",
     featured: false,
@@ -138,6 +155,7 @@ export const projects = [
     description:
       "Front-end replica of Razorpay's homepage — sleek UI, responsive layout, and smooth animations without external frameworks.",
     tags: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+    image: "/projects/razorpay.png",
     github: "https://github.com/pritibishnoii/Razorypay-clone",
     live: "https://razorypay.netlify.app/",
     featured: false,
@@ -147,6 +165,7 @@ export const projects = [
     description:
       "Modern cocktail-brand landing page built with React, Tailwind CSS, and GSAP for smooth scroll animations and a premium feel. Fully responsive.",
     tags: ["React JS", "Tailwind CSS", "GSAP"],
+    image: "/projects/cacktail.png",
     github: "https://github.com/pritibishnoii/cacktail",
     live: "https://cacktail-landing-page.vercel.app/",
     featured: false,

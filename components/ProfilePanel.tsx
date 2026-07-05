@@ -85,7 +85,7 @@ export default function ProfilePanel({
         <h1 className="mt-4 font-display text-lg font-semibold text-text-primary">
           {profile.name}
         </h1>
-        <p className="font-mono text-xs text-accent-violet">{profile.title}</p>
+        <p className="font-mono text-xs text-[#99e2b4]">{profile.title}</p>
         <p className="mt-1 text-xs text-text-dim">{profile.location}</p>
         <p className="mt-1 flex items-center gap-1.5 text-xs text-accent-mint">
           <span className="h-1.5 w-1.5 rounded-full bg-accent-mint" />
@@ -126,7 +126,7 @@ export default function ProfilePanel({
         <a
           href={profile.cvFile}
           download
-          className="flex items-center justify-center gap-2 rounded-lg bg-accent-violet px-4 py-2.5 text-sm font-medium text-void transition-opacity hover:opacity-90">
+          className="flex items-center justify-center gap-2 rounded-lg bg-[#469d89] px-4 py-2.5 text-sm font-medium text-void transition-opacity hover:opacity-90">
           <Download size={15} />
           Download CV
         </a>
