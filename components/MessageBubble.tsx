@@ -25,7 +25,7 @@ export default function MessageBubble({
       transition={{ duration: 0.35, ease: "easeOut" }}
       className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
       <div
-        className={`max-w-[85%] rounded-xl px-4 py-3 text-sm leading-relaxed sm:max-w-[70%] ${
+        className={`max-w-[85%] rounded-xl px-4 py-3 text-sm leading-relaxed sm:max-w-[70%] h-full ${
           isUser
             ? "bg-[#469d89] text-white"
             : "border border-border bg-surface-alt text-text-primary"

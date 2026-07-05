@@ -127,7 +127,7 @@ export default function ChatWindow({ cvText }: { cvText: string | null }) {
   };
 
   return (
-    <div className="flex h-full flex-1 flex-col">
+    <div className="flex h-full flex-1 flex-col min-h-0 ">
       <div
         ref={headerRef}
         className="flex items-center justify-between border-b border-border bg-surface px-5 py-3">
@@ -154,17 +154,22 @@ export default function ChatWindow({ cvText }: { cvText: string | null }) {
 
       <div
         ref={scrollRef}
-        className="flex-1 space-y-4 overflow-y-auto bg-void bg-grid px-4 py-6 sm:px-6">
-        {messages.map((m, i) => (
-          <MessageBubble
-            key={i}
-            message={m}
-            streaming={
-              isStreaming && i === messages.length - 1 && m.role === "assistant"
-            }
-          />
-        ))}
-        {isWaiting && <TypingIndicator />}
+        className="flex-1 min-h-0 overflow-y-auto bg-void bg-grid px-4 py-6 sm:px-6">
+        <div className="space-y-4">
+          {messages.map((m, i) => (
+            <MessageBubble
+              key={i}
+              message={m}
+              streaming={
+                isStreaming &&
+                i === messages.length - 1 &&
+                m.role === "assistant"
+              }
+            />
+          ))}
+
+          {isWaiting && <TypingIndicator />}
+        </div>
       </div>
 
       <form
@@ -172,21 +177,23 @@ export default function ChatWindow({ cvText }: { cvText: string | null }) {
           e.preventDefault();
           sendMessage(input);
         }}
-        className="flex items-center gap-3 border-t border-border bg-surface px-4 py-4 sm:px-6">
+        className="shrink-0 flex items-center gap-3 border-t border-border bg-surface px-4 py-4 sm:px-6">
         <span className="font-mono text-accent-mint">›</span>
-        <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask about projects, skills, experience…"
-          className="flex-1 bg-transparent text-sm text-text-primary placeholder:text-text-dim focus:outline-none"
-        />
-        <button
-          type="submit"
-          disabled={isStreaming || !input.trim()}
-          className="flex items-center gap-1.5 rounded-lg bg-[#469d89] px-4 py-2 text-sm font-medium text-void transition-opacity hover:opacity-90 disabled:opacity-40">
-          <Send size={14} />
-          Send
-        </button>
+        <div className="flex w-full  justify-between">
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Ask about projects, skills, experience…"
+            className="flex-1 bg-transparent text-sm text-text-primary placeholder:text-text-dim focus:outline-none"
+          />
+          <button
+            type="submit"
+            disabled={isStreaming || !input.trim()}
+            className="flex items-center gap-1.5 rounded-lg bg-[#469d89] px-4 py-2 text-sm font-medium text-void transition-opacity hover:opacity-90 disabled:opacity-40 ">
+            <Send size={14} />
+            Send
+          </button>
+        </div>
       </form>
     </div>
   );
