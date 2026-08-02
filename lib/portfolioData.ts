@@ -72,6 +72,17 @@ export const skills = {
 
 export const projects = [
   {
+    title: "InterviewIQ.AI-Full-Stack AI Interview Preparation Platform",
+    description:
+      " Built a production-ready AI mock interview platform using React, Node.js, Express.js, MongoDB, and Tailwind CSS with secure Firebase Authentication (Google Sign-In) and role-based user management. Integrated the OpenRouter API to generate dynamic, role-specific technical interview questions and AI-powered interview evaluations with personalized feedback and interview history.  Implemented Razorpay payment gateway for premium subscriptions, enabling secure online payments, credit management, and premium feature access within the platform.",
+    tags: ["React.js", "Tailwind CSS", "OpenRouter api"],
+    image: "/projects/InterviewIQ-chat.png",
+    github: "https://github.com/pritibishnoii/InterviewIQ-app",
+    live: "https://interviewiq-app-gqwr.onrender.com/",
+
+    featured: true,
+  },
+  {
     title: "AI-Powered-Portfolio",
     description:
       "Built an AI-powered portfolio using Next.js, Tailwind CSS, and Groq API with a ChatGPT-like assistant that answers questions about my skills, projects, and experience.",
