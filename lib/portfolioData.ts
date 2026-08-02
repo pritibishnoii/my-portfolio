@@ -83,6 +83,17 @@ export const projects = [
     featured: true,
   },
   {
+    title: "Streamify -MERN Stack Real-Time Communication Platform",
+    description:
+      "built a full-stack real-time communication platform  Implemented one-to-one real-time messaging with instant message delivery, online/offline presence, typing indicators, and  persistent chat history using Socket.IO.Integrated WebRTC-powered video calling, responsive chat UI, media controls, and optimized state management to  deliver a smooth cross-device user experience.",
+    tags: ["React", "Tailwind CSS", "Mongodb", "Express", "Scoket.IO"],
+    image: "/projects/chat-app.png",
+    github: "https://github.com/pritibishnoii/streamify-frontend",
+    live: "https://streamify-frontend-khxc.onrender.com/",
+
+    featured: true,
+  },
+  {
     title: "QuickKart",
     description:
       "Full-stack e-commerce web app for browsing products, managing a cart, and secure auth. React + Vite frontend, Node.js/MongoDB backend, Redux Toolkit + RTK Query for state management.",
