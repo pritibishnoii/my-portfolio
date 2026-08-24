@@ -7,7 +7,7 @@ import ProfilePanel from "@/components/ProfilePanel";
 import ChatWindow from "@/components/ChatWindow";
 
 export default function Home() {
-  const [avatarUrl, setAvatarUrl] = useState("/profile.png");
+  const [avatarUrl, setAvatarUrl] = useState("/eprofile.png");
   const [cvText, setCvText] = useState<string | null>(null);
   const [cvName, setCvName] = useState<string | null>(null);
 
