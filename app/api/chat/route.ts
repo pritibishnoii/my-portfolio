@@ -6,7 +6,8 @@ export const runtime = 'edge';
 type ChatMessage = { role: 'user' | 'assistant'; content: string };
 
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
-const MODEL = process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
+const MODEL = process.env.GROQ_MODEL || 'openai/gpt-oss-120b';
+
 
 export async function POST(req: NextRequest) {
   const apiKey = process.env.GROQ_API_KEY;
@@ -50,6 +51,7 @@ export async function POST(req: NextRequest) {
     });
   }
 
+  
   // Re-stream Groq's SSE as plain text chunks the client can append directly.
   const stream = new ReadableStream({
     async start(controller) {
@@ -86,6 +88,7 @@ export async function POST(req: NextRequest) {
       controller.close();
     },
   });
+
 
   return new Response(stream, {
     headers: { 'Content-Type': 'text/plain; charset=utf-8' },
