@@ -1,8 +1,9 @@
 /** @format */
 
 "use client";
+import Image from "next/image";
+import {motion} from "framer-motion";
 
-import { motion } from "framer-motion";
 
 export type Message = {
   role: "user" | "assistant";
@@ -32,7 +33,17 @@ export default function MessageBubble({
         }`}>
         <div
           className={`mb-1 font-mono text-[10px] uppercase tracking-wider ${isUser ? "text-void/60" : "text-accent-mint"}`}>
-          {isUser ? "»🫠✨you " : "priti.ai »֎✨"}
+          {isUser ? (
+            "»🫠✨you "
+          ) : (
+            <Image
+              src="/eprofile.png"
+              alt="AI Assistant"
+              width={20}
+              height={20}
+              className="rounded-full"
+            />
+          )}
         </div>
         <div className="whitespace-pre-wrap">
           {message.content}

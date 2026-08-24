@@ -11,9 +11,10 @@ import TabBar, { SectionKey } from "./TabBar";
 import { profile, sectionPrompts } from "@/lib/portfolioData";
 import ProjectsGallery from "./ProjectGallery";
 
+
 const WELCOME: Message = {
   role: "assistant",
-  content: `Hi, I'm ${profile.name}'s AI portfolio assistant. Ask me anything — her projects, skills, experience, or how to reach her — or click a file tab above to jump straight in.`,
+  content: `Hi, I'm ${profile.name}'s   AI portfolio assistant. Ask me anything — her projects, skills, experience, or how to reach her — or click a file tab above to jump straight in.`,
 };
 
 export default function ChatWindow({ cvText }: { cvText: string | null }) {
